@@ -7,7 +7,7 @@ const app = express();
 const port = 3001;
 
 // --- Security & Middleware ---
-app.use(cors({ origin: 'http://localhost:5173' })); 
+app.use(cors({ origin: 'https://dieter01.netlify.app' })); 
 app.use(express.json({ limit: '10mb' }));
 
 // --- API Key Setup ---

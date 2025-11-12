@@ -418,7 +418,7 @@ export default function App() {
     setError(null);
     try {
       const base64ImageData = await fileToBase64(file);
-      const response = await fetch('http://localhost:3001/analyze-image', {
+      const response = await fetch('https://schoolstuff-lj67.onrender.com/analyze-image', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
