@@ -138,5 +138,5 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
-# env files 
-.env
+# Ignore the backend .env file
+backend/.env
