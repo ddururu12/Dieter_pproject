@@ -1,5 +1,4 @@
-# 2025/2 인간gpt p프로젝트  
-[LINK](https://dieter01.netlify.app/)  
+# [LINK](https://dieter01.netlify.app/)  
 
 # 사용방법  
 main은 호스팅에 사용되는 최종 브랜치이며, dev는 저희 개발 브랜치입니다  
@@ -29,3 +28,6 @@ Gemini API
 텍스트, 이미지 혼합 입력 필요  
   
 ### AI 모델 
+
+### 언어 한국어 변경 필요 
+gemini도 UI도 영어로 설정되어 있
