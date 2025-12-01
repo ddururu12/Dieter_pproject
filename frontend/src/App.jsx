@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useCallback } from 'react';
 import Login from './Login';
 import MyPage from './MyPage';
@@ -5,6 +6,7 @@ import MyPage from './MyPage';
 // Firebase Imports
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInAnonymously } from 'firebase/auth';
+
 import {
   getFirestore,
   addDoc,
@@ -25,12 +27,15 @@ const firebaseConfig = {
   appId: "1:494620949863:web:70d3aca17dc51708c583c2"
 };
 
+
 const appId = 'dieter-app';
+
 
 const firebaseApp = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
 setLogLevel('error');
+
 
 // --- Helper Components: NavHeader (공통 사용) ---
 const NavHeader = ({ currentView, onNavigate }) => (
@@ -81,6 +86,7 @@ const MainDashboard = ({ dailyTotals, foodEntries, onUploadText, onUploadImage, 
     { name: '지방', key: 'fat', target: dailyTotals.rda.fat },
     { name: '당류', key: 'sugar', target: dailyTotals.rda.sugar || 50 },
     { name: '나트륨', key: 'sodium', target: dailyTotals.rda.sodium || 2000 },
+
   ];
 
   const totalCalories = dailyTotals.intake.calories;
@@ -88,6 +94,7 @@ const MainDashboard = ({ dailyTotals, foodEntries, onUploadText, onUploadImage, 
   const caloriePercentage = (totalCalories / targetCalories) * 100;
   
   return (
+
     <div className="min-h-screen bg-gray-50 pb-20">
       <NavHeader currentView="dashboard" onNavigate={onNavigate} />
 

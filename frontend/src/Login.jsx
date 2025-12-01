@@ -38,8 +38,11 @@ const Login = ({ onLogin }) => {
             </button>
           </div>
           
-          <p className="text-center mt-6 text-sm text-gray-400">
-            계정이 없으신가요? <a href="#" className="text-teal-500 font-bold">회원가입</a>
+          <p className="mt-6 text-center text-sm text-gray-500">
+            계정이 없으신가요? 
+            <a href="#" className="font-bold text-teal-500 ml-1 hover:text-teal-600">
+              회원가입
+            </a>
           </p>
         </div>
       </div>
