@@ -6,7 +6,7 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 const app = express();
 const port = 3001;
 
-app.use(cors({ origin: 'http://localhost:5173' })); 
+app.use(cors({ origin: 'https://dieter01.netlify.app' })); 
 app.use(express.json({ limit: '10mb' }));
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
