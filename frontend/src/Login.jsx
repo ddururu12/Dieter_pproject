@@ -66,7 +66,7 @@ const Login = ({ onLogin, onSignup, error }) => {
           <button
             type="submit"
             // 버튼 디자인: 민트색 메인 버튼
-            className="w-full bg-teal-600 hover:bg-teal-700 text-teal-600 font-semibold py-3 px-4 rounded-lg transition-colors duration-200 mt-6 shadow-md"
+            className="w-full bg-teal-600 hover:bg-teal-700 text-teal-500 font-semibold py-3 px-4 rounded-lg transition-colors duration-200 mt-6 shadow-md"
           >
             {isSignup ? '계정 생성' : '로그인'}
           </button>
