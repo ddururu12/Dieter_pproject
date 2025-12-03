@@ -97,7 +97,7 @@ const Modal = ({ title, message, onClose }) => (
   
 const DailySummaryContent = ({ totals }) => {
     const nutItems = [
-      { name: '순탄수', key: 'carbohydrates', rda: 100, unit: 'g' }, 
+      { name: '순탄수', key: 'carbohydrates', rda: 250, unit: 'g' }, 
       { name: '단백질', key: 'protein', rda: 120, unit: 'g' }, 
       { name: '지방', key: 'fat', rda: 50, unit: 'g' }, 
       { name: '당류', key: 'sugar', rda: 50, unit: 'g' },
