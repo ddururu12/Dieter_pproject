@@ -20,6 +20,7 @@ import {
   addDoc,
   setDoc, 
   getDoc, 
+
   writeBatch,
   collection,
   query,
@@ -274,6 +275,7 @@ export default function App() {
       setIsAdmin(currentUser && currentUser.email === ADMIN_EMAIL);
       
       // [추가] 로그인 시 Firestore에서 사용자 프로필 불러오기 (닉네임, 성별 등)
+
       if (currentUser) {
         try {
             const userDocRef = doc(db, `artifacts/${appId}/users/${currentUser.uid}`);
@@ -355,6 +357,7 @@ export default function App() {
             
             // 프로필 업데이트 시 영양소 추천도 새로고침 (즉시 트리거)
             handleGetRecommendation(); 
+
         } catch (err) {
             console.error("프로필 업데이트 오류:", err);
             setError("프로필 저장 실패: " + err.message);
@@ -439,8 +442,10 @@ export default function App() {
     setIsLoadingRec(true);
     setRecommendation(null); 
     try {
+      // 1. Create Array of Strings (server expects foodList: string[])
       const foodListArray = foodEntries.map(f => `${f.foodName} (${f.calories}kcal)`);
       
+      // 2. Map 'carbohydrates' -> 'carbs' (Server expects currentIntake: { carbs: ... })
       const currentIntake = {
         ...dailyTotals,
         carbs: dailyTotals.carbohydrates 
@@ -491,8 +496,7 @@ export default function App() {
 
   // --- Login Screen ---
   if (!user) {
-    // Login 컴포넌트에서는 input과 버튼의 호버/포커스 스타일을 수정해야 합니다.
-    // 하지만 Login 컴포넌트 내부 코드가 없으므로, 해당 컴포넌트의 스타일이 아래와 같이 가정된다고 보고 수정합니다.
+    // Pass the new handleSignup which now accepts username
     return <Login onLogin={handleLogin} onSignup={handleSignup} error={authError} />;
   }
   
@@ -668,7 +672,7 @@ export default function App() {
             ))}
           </nav>
 
-          {/* 로그아웃 버튼 (MyPage로 이동했으므로 제거된 상태 유지) */}
+          {/* --- 로그아웃 버튼 제거 --- */}
           <div className="w-16"></div> 
         </div>
       </header>
